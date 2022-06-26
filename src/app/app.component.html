@@ -4,9 +4,9 @@
 
 <div class="main">
 
-  <p>
-    <strong>Health Ping Result:</strong> {{healthPing | async}}
-  </p>
+  <a [routerLink]="'/flights'" routerLinkActive="active-link">flights module</a>
+
+  <router-outlet></router-outlet>
 
 </div>
 <footer class="footer">
