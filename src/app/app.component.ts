@@ -9,7 +9,6 @@ import { FlightsService } from './flights.service';
 })
 export class AppComponent implements OnInit {
   healthPing: Observable<string>;
-  title = "alaska-airlines";
 
   constructor(private flightService: FlightsService) {
 

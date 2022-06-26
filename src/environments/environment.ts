@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  apiKey: 'YOUR_API_KEY_HERE'
+  apiKey: 'YOUR_API_KEY_HERE',
+  flightsApiEndpoint: 'https://apis.qa.alaskaair.com/aag/1/guestServices/flights',
+  flightsApiHealthCheckEndpoint: 'https://apis.qa.alaskaair.com/aag/1/guestServices/flights/ping',
 };
 
 /*
