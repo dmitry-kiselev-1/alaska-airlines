@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { FlightsSearchComponent } from './flights-search.component';
 
@@ -8,6 +9,7 @@ describe('FlightsSearchComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [MatAutocompleteModule],
       declarations: [ FlightsSearchComponent ]
     })
     .compileComponents();

@@ -1,5 +1,4 @@
-<p>flights-health-check works!</p>
-
-<p>
-  <strong>Health Ping Result:</strong> {{healthPing | async}}
-</p>
+<br/>
+<!--<strong>Health Ping Result:</strong> {{healthPing$ | async}}-->
+<mat-icon *ngIf="(healthPing$ | async)" aria-hidden="false" style="color: green">check_circle</mat-icon>
+<mat-icon *ngIf="!(healthPing$ | async)" aria-hidden="false" style="color: red">block</mat-icon>

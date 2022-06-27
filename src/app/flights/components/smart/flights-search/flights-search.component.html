@@ -1,3 +1,37 @@
-<p>flights-search works!</p>
-
 <app-flights-health-check></app-flights-health-check>
+
+<mat-grid-list cols="5" rowHeight="2:1">
+
+  <mat-grid-tile>
+    <app-airport-code-type-ahead [label]="'Origin'" (onCodeSelected)="onOriginCodeSelected($event)"></app-airport-code-type-ahead>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <app-airport-code-type-ahead [label]="'Destination'" (onCodeSelected)="onDestinationCodeSelected($event)"></app-airport-code-type-ahead>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-form-field appearance="fill">
+      <mat-label>Departure date range</mat-label>
+      <mat-date-range-input [formGroup]="dateRangeFormGroup" [rangePicker]="picker">
+        <input matStartDate formControlName="start" placeholder="Start date">
+        <input matEndDate formControlName="end" placeholder="End date">
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+
+      <mat-error *ngIf="dateRangeFormGroup.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+      <mat-error *ngIf="dateRangeFormGroup.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+    </mat-form-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <button mat-fab color="primary" (click)="onGetFlightsButtonClick()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-grid-tile>
+
+</mat-grid-list>
+
+<app-flights-search-result [data]="flightsSearchResultModel"></app-flights-search-result>
