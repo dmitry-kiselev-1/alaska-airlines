@@ -7,6 +7,7 @@ export const environment = {
   apiKey: 'YOUR_API_KEY_HERE',
   flightsApiEndpoint: 'https://apis.qa.alaskaair.com/aag/1/guestServices/flights',
   flightsApiHealthCheckEndpoint: 'https://apis.qa.alaskaair.com/aag/1/guestServices/flights/ping',
+  useFlightsApiEndpointJson: false,
 };
 
 /*

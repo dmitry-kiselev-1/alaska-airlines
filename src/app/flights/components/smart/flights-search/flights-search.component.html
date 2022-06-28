@@ -3,11 +3,13 @@
 <mat-grid-list cols="5" rowHeight="2:1">
 
   <mat-grid-tile>
-    <app-airport-code-type-ahead [label]="'Origin'" (onCodeSelected)="onOriginCodeSelected($event)"></app-airport-code-type-ahead>
+    <app-airport-code-type-ahead [label]="'Origin'" (onCodeSelected)="onOriginCodeSelected($event)"
+                                 (onValidationChanged)="onOriginValidationChanged($event)"></app-airport-code-type-ahead>
   </mat-grid-tile>
 
   <mat-grid-tile>
-    <app-airport-code-type-ahead [label]="'Destination'" (onCodeSelected)="onDestinationCodeSelected($event)"></app-airport-code-type-ahead>
+    <app-airport-code-type-ahead [label]="'Destination'" (onCodeSelected)="onDestinationCodeSelected($event)"
+                                 (onValidationChanged)="onDestinationValidationChanged($event)"></app-airport-code-type-ahead>
   </mat-grid-tile>
 
   <mat-grid-tile>
@@ -27,7 +29,7 @@
   </mat-grid-tile>
 
   <mat-grid-tile>
-    <button mat-fab color="primary" (click)="onGetFlightsButtonClick()">
+    <button mat-fab color="primary" (click)="onGetFlightsButtonClick()" [disabled]="dateRangeFormGroup.invalid || this.destinationInvalid || this.originInvalid">
       <mat-icon>search</mat-icon>
     </button>
   </mat-grid-tile>

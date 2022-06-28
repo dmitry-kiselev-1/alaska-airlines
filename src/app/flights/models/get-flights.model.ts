@@ -1,16 +1,18 @@
 export class GetFlightsModel {
-
-  "flights": [
-    {
-      "flightDetails": {
-        "operatingFlightNumber": string | undefined,
-        "scheduledFlightOriginationDateUTC": string | undefined,
-        "flightLegs": [
-          {
-            "scheduledDepartureDateStnLocal": string | undefined
-          }
-        ]
-      },
-    }
-  ]
+  flights: [
+    flightDetails: {
+      operatingFlightNumber: string | undefined,
+      flightLegs: [
+        scheduledDateTimeUTC: {
+          out: string | undefined,
+          in: string | undefined
+        }
+      ]
+    },
+    actionResult:
+      {
+        code: number,
+        messages: []
+      }
+  ];
 }
