@@ -5,11 +5,11 @@ import { FlightsSearchResultModel } from '../../../models/flights-search-result.
   selector: 'app-flights-search-result',
   templateUrl: './flights-search-result.component.html',
   styleUrls: ['./flights-search-result.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlightsSearchResultComponent {
-
-  @Input() data: FlightsSearchResultModel[] = new Array<FlightsSearchResultModel>();
+  @Input() data: FlightsSearchResultModel[] =
+    new Array<FlightsSearchResultModel>();
 
   displayedColumns: string[] = ['FlightNumber', 'DepartureTime', 'ArrivalTime'];
 }

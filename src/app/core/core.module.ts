@@ -7,17 +7,10 @@ import { CoreMaterialDesignModule } from './core-material-design.module';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    BrowserAnimationsModule,
-    CoreMaterialDesignModule,
-  ],
-  exports: [
-    CoreMaterialDesignModule
-  ],
+  imports: [CommonModule, BrowserAnimationsModule, CoreMaterialDesignModule],
+  exports: [CoreMaterialDesignModule],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: FlightApiInterceptor, multi: true},
-  ]
+    { provide: HTTP_INTERCEPTORS, useClass: FlightApiInterceptor, multi: true },
+  ],
 })
-export class CoreModule {
-}
+export class CoreModule {}

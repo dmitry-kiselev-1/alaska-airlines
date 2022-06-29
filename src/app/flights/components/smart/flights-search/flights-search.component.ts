@@ -1,4 +1,8 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { FlightsSearchModel } from '../../../models/flights-search.model';
@@ -10,10 +14,9 @@ import { environment } from '../../../../../environments/environment';
   selector: 'app-flights-search',
   templateUrl: './flights-search.component.html',
   styleUrls: ['./flights-search.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlightsSearchComponent {
-
   flightsSearchModel = new FlightsSearchModel();
   flightsSearchResultModel = new Array<FlightsSearchResultModel>();
   dateRangeFormGroup = new FormGroup({
@@ -21,8 +24,10 @@ export class FlightsSearchComponent {
     end: new FormControl<Date | null>(new Date(), Validators.required),
   });
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, private flightsService: FlightsService) {
-  }
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private flightsService: FlightsService
+  ) {}
 
   onOriginCodeSelected(code: string) {
     this.flightsSearchModel.origin = code;
@@ -43,12 +48,18 @@ export class FlightsSearchComponent {
   }
 
   async onGetFlightsButtonClick() {
-    this.flightsSearchModel.fromDate = this.dateRangeFormGroup.value?.start?.toISOString()?.split('T')[0];
-    this.flightsSearchModel.toDate = this.dateRangeFormGroup.value?.end?.toISOString()?.split('T')[0];
+    this.flightsSearchModel.fromDate = this.dateRangeFormGroup.value?.start
+      ?.toISOString()
+      ?.split('T')[0];
+    this.flightsSearchModel.toDate = this.dateRangeFormGroup.value?.end
+      ?.toISOString()
+      ?.split('T')[0];
     if (!environment.production) {
       console.log(this.flightsSearchModel);
     }
-    const flights = await this.flightsService.getFlights(this.flightsSearchModel);
+    const flights = await this.flightsService.getFlights(
+      this.flightsSearchModel
+    );
     this.flightsSearchResultModel = flights;
 
     this.changeDetectorRef.detectChanges();

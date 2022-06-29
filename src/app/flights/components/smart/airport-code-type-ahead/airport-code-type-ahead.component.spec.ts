@@ -8,9 +8,8 @@ describe('AirportCodeTypeAheadComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AirportCodeTypeAheadComponent ]
-    })
-    .compileComponents();
+      declarations: [AirportCodeTypeAheadComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AirportCodeTypeAheadComponent);
     component = fixture.componentInstance;

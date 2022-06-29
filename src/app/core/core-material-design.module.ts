@@ -47,12 +47,7 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    MatListModule
-  ]
+  imports: [CommonModule],
+  exports: [MatListModule],
 })
-export class CoreMaterialDesignModule {
-}
+export class CoreMaterialDesignModule {}

@@ -61,17 +61,15 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule
-  ],
-/*
+  imports: [CommonModule],
+  /*
   providers: [
     MatDatepickerModule,
     MatNativeDateModule,
   ],
 */
   exports: [
-/*
+    /*
     A11yModule,
     CdkAccordionModule,
     ClipboardModule,
@@ -81,12 +79,12 @@ import { CommonModule } from '@angular/common';
     DragDropModule,
 */
     MatAutocompleteModule,
-/*
+    /*
     MatBadgeModule,
     MatBottomSheetModule,
 */
     MatButtonModule,
-/*
+    /*
     MatButtonToggleModule,
     MatCardModule,
     MatCheckboxModule,
@@ -94,7 +92,7 @@ import { CommonModule } from '@angular/common';
     MatStepperModule,
 */
     MatDatepickerModule,
-/*
+    /*
     MatDialogModule,
     MatDividerModule,
     MatExpansionModule,
@@ -102,19 +100,19 @@ import { CommonModule } from '@angular/common';
     MatGridListModule,
     MatIconModule,
     MatInputModule,
-/*
+    /*
     MatListModule,
     MatMenuModule,
 */
     MatNativeDateModule,
-/*
+    /*
     MatPaginatorModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatRadioModule,
 */
     MatRippleModule,
-/*
+    /*
     MatSelectModule,
     MatSidenavModule,
     MatSliderModule,
@@ -123,7 +121,7 @@ import { CommonModule } from '@angular/common';
     MatSortModule,
 */
     MatTableModule,
-/*
+    /*
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
@@ -132,7 +130,6 @@ import { CommonModule } from '@angular/common';
     PortalModule,
     ScrollingModule,
 */
-  ]
+  ],
 })
-export class FlightsMaterialDesignModule {
-}
+export class FlightsMaterialDesignModule {}

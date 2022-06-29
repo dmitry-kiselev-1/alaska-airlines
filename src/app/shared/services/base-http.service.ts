@@ -1,7 +1,6 @@
 import { Observable, throwError } from 'rxjs';
 
 export abstract class BaseHttpService {
-
   protected handleError(err: any): Observable<never> {
     // in a real world app, we may send the server to some remote logging infrastructure
     // instead of just logging it to the console

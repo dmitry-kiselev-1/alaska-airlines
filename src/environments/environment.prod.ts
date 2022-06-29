@@ -3,5 +3,5 @@ export const environment = {
   apiKey: '',
   flightsApiEndpoint: '',
   flightsApiHealthCheckEndpoint: '',
-  useFlightsApiEndpointJson: false
+  useFlightsApiEndpointJson: false,
 };

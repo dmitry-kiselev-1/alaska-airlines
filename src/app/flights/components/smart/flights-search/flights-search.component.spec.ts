@@ -10,9 +10,8 @@ describe('FlightsSearchComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [MatAutocompleteModule],
-      declarations: [ FlightsSearchComponent ]
-    })
-    .compileComponents();
+      declarations: [FlightsSearchComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FlightsSearchComponent);
     component = fixture.componentInstance;

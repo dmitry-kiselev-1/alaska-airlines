@@ -4,12 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'flights',
-    loadChildren: () => import('./flights/flights.module').then(m => m.FlightsModule)
-  }
+    loadChildren: () =>
+      import('./flights/flights.module').then((m) => m.FlightsModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -10,13 +10,10 @@ describe('FlightsHealthCheckComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule
-      ],
+      imports: [HttpClientTestingModule],
       providers: [FlightsService],
-      declarations: [ FlightsHealthCheckComponent ]
-    })
-    .compileComponents();
+      declarations: [FlightsHealthCheckComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(FlightsHealthCheckComponent);
     component = fixture.componentInstance;

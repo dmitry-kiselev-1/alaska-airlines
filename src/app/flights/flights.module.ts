@@ -9,13 +9,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AirportCodeTypeAheadComponent } from './components/smart/airport-code-type-ahead/airport-code-type-ahead.component';
 
-
 @NgModule({
   declarations: [
     FlightsSearchComponent,
     FlightsSearchResultComponent,
     FlightsHealthCheckComponent,
-    AirportCodeTypeAheadComponent
+    AirportCodeTypeAheadComponent,
   ],
   imports: [
     CommonModule,
@@ -23,7 +22,6 @@ import { AirportCodeTypeAheadComponent } from './components/smart/airport-code-t
     FlightsRoutingModule,
     FlightsMaterialDesignModule,
     ReactiveFormsModule,
-  ]
+  ],
 })
-export class FlightsModule {
-}
+export class FlightsModule {}
