@@ -1,8 +1,8 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  inject,
   OnInit,
+  inject,
 } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FlightsService } from '../../../services/flights.service';

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {
+  Observable,
   catchError,
   firstValueFrom,
   flatMap,
-  Observable,
   tap,
   toArray,
 } from 'rxjs';

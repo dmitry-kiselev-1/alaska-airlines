@@ -4,7 +4,7 @@ import { FlightsSearchComponent } from './components/smart/flights-search/flight
 import { FlightsSearchResultComponent } from './components/presentation/flights-search-result/flights-search-result.component';
 import { FlightsRoutingModule } from './flights-routing.module';
 import { FlightsHealthCheckComponent } from './components/smart/flights-health-check/flights-health-check.component';
-import { FlightsMaterialDesignModule } from './flights-material-design.module';
+import { FlightsMaterialDesignModule } from '../shared/flights-material-design.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AirportCodeTypeAheadComponent } from './components/smart/airport-code-type-ahead/airport-code-type-ahead.component';
