@@ -17,6 +17,7 @@ import { environment } from '../../../../../environments/environment';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FlightsSearchComponent {
+  isLoading = false;
   flightsSearchModel = new FlightsSearchModel();
   flightsSearchResultModel = new Array<FlightsSearchResultModel>();
   dateRangeFormGroup = new FormGroup({
@@ -48,6 +49,7 @@ export class FlightsSearchComponent {
   }
 
   async onGetFlightsButtonClick() {
+    this.isLoading = true;
     this.flightsSearchModel.fromDate = this.dateRangeFormGroup.value?.start
       ?.toISOString()
       ?.split('T')[0];
@@ -57,11 +59,11 @@ export class FlightsSearchComponent {
     if (!environment.production) {
       console.log(this.flightsSearchModel);
     }
-    const flights = await this.flightsService.getFlights(
+    this.flightsSearchResultModel = await this.flightsService.getFlights(
       this.flightsSearchModel
     );
-    this.flightsSearchResultModel = flights;
 
+    this.isLoading = false;
     this.changeDetectorRef.detectChanges();
   }
 }

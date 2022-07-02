@@ -29,8 +29,8 @@
   </mat-grid-tile>
 
   <mat-grid-tile>
-    <button mat-fab color="primary" (click)="onGetFlightsButtonClick()" [disabled]="dateRangeFormGroup.invalid || this.destinationInvalid || this.originInvalid">
-      <mat-icon>search</mat-icon>
+    <button mat-fab color="primary" (click)="onGetFlightsButtonClick()" [disabled]="isLoading || dateRangeFormGroup.invalid || this.destinationInvalid || this.originInvalid">
+      <mat-icon>{{isLoading ? 'hourglass_empty' : 'search'}}</mat-icon>
     </button>
   </mat-grid-tile>
 

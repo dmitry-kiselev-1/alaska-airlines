@@ -7,7 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged, Observable, switchMap } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
 @Component({
@@ -21,8 +21,8 @@ export class AirportCodeTypeAheadComponent implements OnInit {
   @Output() onCodeSelected = new EventEmitter<string>();
   @Output() onValidationChanged = new EventEmitter<boolean>(false);
 
-  //ToDo: get airportCodes from service, local storage, cache, etc...
-  airportCodes: string[] = [
+  //ToDo: get airportCodes from service, local storage, cache, etc... (set constructor returns array without doubles)
+  airportCodes: string[] = [...new Set( [
     '',
     'SEA',
     'PHX',
@@ -126,7 +126,7 @@ export class AirportCodeTypeAheadComponent implements OnInit {
     'BTV',
     'TLH',
     'BFI',
-  ];
+  ])];
 
   formControl = new FormControl<string | null>('', Validators.required);
   filteredOptions$: Observable<string[]>;
@@ -134,12 +134,20 @@ export class AirportCodeTypeAheadComponent implements OnInit {
   ngOnInit() {
     this.filteredOptions$ = this.formControl.valueChanges.pipe(
       startWith(''),
+
+      debounceTime(250),
+      distinctUntilChanged(),
+
       map((value) => this.filter(value || ''))
+
+      //ToDo: airportCodesDataService instead of filter function
+      //switchMap(value => this.airportCodesDataService.getSearchData(value))
     );
   }
 
   private filter(value: string): string[] {
     const filterValue = value.toLowerCase();
+
     const result = this.airportCodes.filter((option) =>
       option.toLowerCase().includes(filterValue)
     );
@@ -152,5 +160,9 @@ export class AirportCodeTypeAheadComponent implements OnInit {
     }
 
     return result;
+  }
+
+  optionTrackBy(index: number, option: string) {
+    return option;
   }
 }
